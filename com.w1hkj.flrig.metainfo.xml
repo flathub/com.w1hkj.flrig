@@ -4,6 +4,9 @@
  <id>com.w1hkj.flrig</id>
  <metadata_license>CC0-1.0</metadata_license>
  <project_license>GPL-3.0</project_license>
+ <provides>
+  <id>flrig.desktop</id>
+ </provides>
  <name>Flrig</name>
  <summary>Amateur Radio Rig Control</summary>
  <developer_name>dave-w1hkj, mdblack98, sb42</developer_name>
