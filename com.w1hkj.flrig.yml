@@ -33,6 +33,10 @@ modules:
       - type: archive
         url: http://www.w1hkj.com/files/flrig/flrig-1.3.52.tar.gz
         sha256: 887e84b147822d755181a9d15f4ffdd3d4a54c8255154a3c2b826e80002981a1
+        x-checker-data:
+          type: anitya
+          project-id: 9624
+          url-template: http://www.w1hkj.com/files/flrig/flrig-$version.tar.gz
   - name: metainfo
     buildsystem: simple
     build-commands:
