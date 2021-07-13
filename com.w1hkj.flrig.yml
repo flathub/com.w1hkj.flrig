@@ -35,8 +35,8 @@ modules:
   - name: flrig
     sources:
       - type: archive
-        url: http://www.w1hkj.com/files/flrig/flrig-1.4.0.tar.gz
-        sha256: 0ab20393a719941fa8b4ef425851fb7483ba4b7454ba12cb39c6fe8648860b07
+        url: http://www.w1hkj.com/files/flrig/flrig-1.4.1.tar.gz
+        sha256: 7828806763239ae394684195656816eb72208d02ec4c44a76b7230fc45b09065
         x-checker-data:
           type: anitya
           project-id: 9624
