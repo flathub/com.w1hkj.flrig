@@ -26,8 +26,8 @@ modules:
   - name: fltk
     sources:
       - type: archive
-        url: https://www.fltk.org/pub/fltk/1.3.7/fltk-1.3.7-source.tar.bz2
-        sha256: 5ff1e90766ff4216e78e9a19a9bf527e6258f04accccd4429e9bb829b01d690d
+        url: https://www.fltk.org/pub/fltk/1.3.8/fltk-1.3.8-source.tar.bz2
+        sha256: 1d9832409fc08c908c64ab40ad9fd8b0e8af5d203651eb9690b810f41e2f412d
         x-checker-data:
           type: anitya
           project-id: 823
