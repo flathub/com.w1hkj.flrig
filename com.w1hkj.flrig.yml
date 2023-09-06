@@ -1,6 +1,6 @@
 app-id: com.w1hkj.flrig
 runtime: org.freedesktop.Platform
-runtime-version: '22.08'
+runtime-version: '23.08'
 sdk: org.freedesktop.Sdk
 command: flrig
 rename-desktop-file: flrig.desktop
