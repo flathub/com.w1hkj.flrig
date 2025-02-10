@@ -26,12 +26,12 @@ modules:
   - name: fltk
     sources:
       - type: archive
-        url: https://www.fltk.org/pub/fltk/1.4.0/fltk-1.4.0-source.tar.bz2
-        sha256: 186bce1039a410072a02dc6b2957806dd8f15687bfed935868072bb8c9d25daf
+        url: https://github.com/fltk/fltk/releases/download/release-1.4.1/fltk-1.4.1-source.tar.bz2
+        sha256: bff25d1c79fa0620e37ee17871f13fc2b35aa56d17e7576aa9a8d2ce5ed0e57e
         x-checker-data:
           type: anitya
           project-id: 823
-          url-template: https://www.fltk.org/pub/fltk/$version/fltk-$version-source.tar.bz2
+          url-template: https://github.com/fltk/fltk/releases/download/release-$version/fltk-$version-source.tar.bz2
   - name: flrig
     sources:
       - type: archive
