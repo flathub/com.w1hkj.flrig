@@ -10,7 +10,7 @@
  <name>Flrig</name>
  <summary>Amateur Radio Rig Control</summary>
  <developer_name>dave-w1hkj, mdblack98, sb42</developer_name>
- <url type="homepage">http://www.w1hkj.com</url>
+ <url type="homepage">https://www.w1hkj.org</url>
  <description>
   <p>
   Flrig is a transceiver control program designed to be used
@@ -19,7 +19,7 @@
  </description>
  <screenshots>
   <screenshot type="default">
-   <image>http://www.w1hkj.com/flrig-help/ui_small.png</image>
+   <image>https://www.w1hkj.org/flrig-help/ui_small.png</image>
   </screenshot>
  </screenshots>
  <releases>
