@@ -1,10 +1,9 @@
 app-id: com.w1hkj.flrig
 runtime: org.freedesktop.Platform
-runtime-version: '25.08'
+runtime-version: '26.08'
 sdk: org.freedesktop.Sdk
 command: flrig
 rename-desktop-file: flrig.desktop
-rename-icon: flrig
 finish-args:
   - --share=ipc
   - --socket=x11
@@ -15,39 +14,38 @@ finish-args:
   - --persist=.fltk
   - --persist=.nbems
 cleanup:
-  - /man
   - /include
-  - /share/man
+  - /lib/pkgconfig
+  - /share/aclocal
   - /share/doc
-  - /doc
+  - /share/man
   - '*.a'
   - '*.la'
 modules:
   - name: fltk
     sources:
       - type: archive
-        url: https://github.com/fltk/fltk/releases/download/release-1.4.5/fltk-1.4.5-source.tar.bz2
+        url: 
+          https://github.com/fltk/fltk/releases/download/release-1.4.5/fltk-1.4.5-source.tar.bz2
         sha256: b5a52489b7ffae196db2076adb4c1b18170db0d047f5e93539a382603461564b
         x-checker-data:
           type: anitya
           project-id: 823
-          url-template: https://github.com/fltk/fltk/releases/download/release-$version/fltk-$version-source.tar.bz2
+          url-template: 
+            https://github.com/fltk/fltk/releases/download/release-$version/fltk-$version-source.tar.bz2
   - name: flrig
+    post-install:
+      - install -Dm644 com.w1hkj.flrig.metainfo.xml -t /app/share/metainfo/
+      - install -Dm644 com.w1hkj.flrig.png -t /app/share/icons/hicolor/128x128/apps/
+      - desktop-file-edit --set-icon=com.w1hkj.flrig /app/share/applications/flrig.desktop
     sources:
       - type: archive
-        url: https://www.w1hkj.org/files/flrig/flrig-2.0.10.tar.gz
-        sha256: 6a5f2b87d4fffed410a35b3a176b5d04e60ed4de3fda545079f3656e42ef42bd
+        url: https://www.w1hkj.org/files/flrig/flrig-2.0.12.tar.gz
+        sha256: c16dc007b68e7be5dab363381085d0bc5c8842906116ecd9e16ee75c9d5accbf
         x-checker-data:
           type: anitya
           project-id: 9624
           url-template: https://www.w1hkj.org/files/flrig/flrig-$version.tar.gz
-  - name: metainfo
-    buildsystem: simple
-    build-commands:
-      - mkdir -p $FLATPAK_DEST/share/icons/hicolor/128x128/apps/
-      - install -D com.w1hkj.flrig.metainfo.xml /app/share/metainfo/com.w1hkj.flrig.metainfo.xml
-      - cp com.w1hkj.flrig.png $FLATPAK_DEST/share/icons/hicolor/128x128/apps/flrig.png
-    sources:
       - type: file
         path: com.w1hkj.flrig.metainfo.xml
       - type: file
