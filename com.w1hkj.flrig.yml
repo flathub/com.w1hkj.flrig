@@ -1,10 +1,9 @@
 app-id: com.w1hkj.flrig
 runtime: org.freedesktop.Platform
-runtime-version: '25.08'
+runtime-version: '26.08'
 sdk: org.freedesktop.Sdk
 command: flrig
 rename-desktop-file: flrig.desktop
-rename-icon: flrig
 finish-args:
   - --share=ipc
   - --socket=x11
@@ -15,11 +14,11 @@ finish-args:
   - --persist=.fltk
   - --persist=.nbems
 cleanup:
-  - /man
   - /include
-  - /share/man
+  - /lib/pkgconfig
+  - /share/aclocal
   - /share/doc
-  - /doc
+  - /share/man
   - '*.a'
   - '*.la'
 modules:
@@ -35,6 +34,10 @@ modules:
           url-template: 
             https://github.com/fltk/fltk/releases/download/release-$version/fltk-$version-source.tar.bz2
   - name: flrig
+    post-install:
+      - install -Dm644 com.w1hkj.flrig.metainfo.xml -t /app/share/metainfo/
+      - install -Dm644 com.w1hkj.flrig.png -t /app/share/icons/hicolor/128x128/apps/
+      - desktop-file-edit --set-icon=com.w1hkj.flrig /app/share/applications/flrig.desktop
     sources:
       - type: archive
         url: https://www.w1hkj.org/files/flrig/flrig-2.0.12.tar.gz
@@ -43,13 +46,6 @@ modules:
           type: anitya
           project-id: 9624
           url-template: https://www.w1hkj.org/files/flrig/flrig-$version.tar.gz
-  - name: metainfo
-    buildsystem: simple
-    build-commands:
-      - mkdir -p $FLATPAK_DEST/share/icons/hicolor/128x128/apps/
-      - install -D com.w1hkj.flrig.metainfo.xml /app/share/metainfo/com.w1hkj.flrig.metainfo.xml
-      - cp com.w1hkj.flrig.png $FLATPAK_DEST/share/icons/hicolor/128x128/apps/flrig.png
-    sources:
       - type: file
         path: com.w1hkj.flrig.metainfo.xml
       - type: file
